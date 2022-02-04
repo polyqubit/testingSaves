@@ -1,5 +1,7 @@
-package pkg;
+package pets;
 import java.util.*;
+
+import pkg.Pet;
 
 public class Fish implements Pet {
     String name;
