@@ -1,4 +1,3 @@
-import pets.*;
 import pkg.*;
 import java.io.*;
 import java.util.*;
@@ -20,7 +19,10 @@ public class Save {
     public File getFile() {
         return saveFile;
     }
-    public void writeSave(ArrayList<String> args, int petNumber) {
+    public void writeSave(ArrayList<Pet> petList, int petNumber) {
 
+    }
+    public void readSave() {
+        
     }
 }
