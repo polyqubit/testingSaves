@@ -18,6 +18,7 @@ public class starter {
     } 
 	public static void main(String args[]) {
 		Scanner sc = new Scanner(System.in);
+		Save game;
 		int slotNum = -1;
 		// loading/creating save
 		p("PET GAME\nWould you like to load a save or create a new one? (LOAD / NEW)\n");

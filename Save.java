@@ -8,7 +8,7 @@ import java.util.*;
  * 1-9: pet0 data
  * 10: pet1
  * 11-19: pet1 data
- * . . .
+ * . . . continues until pet9
  * Maybe implement basic checks to prevent data modification
  */
 public class Save {
@@ -19,10 +19,10 @@ public class Save {
     public File getFile() {
         return saveFile;
     }
-    public void writeSave(ArrayList<Pet> petList, int petNumber) {
+    public void writeSave(Pet[] petList, int petNumber) {
 
     }
-    public void readSave() {
+    public void readLine(int line) {
         
     }
 }
