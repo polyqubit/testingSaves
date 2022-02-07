@@ -8,4 +8,5 @@ public interface Pet {
     public int getAge();                    	// Returns age of the pet
     public void interact();                 	// This is like bark or meow, say pet name and what they do!
 	public void trick();						// The pet performs a trick if the pet is trained. If not, the pet just acts normal.
+    public String toString();                   // Returns the type of animal this Pet is
 }

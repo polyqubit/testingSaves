@@ -20,6 +20,7 @@ public class starter {
 		Scanner sc = new Scanner(System.in);
 		Save game;
 		int slotNum = -1;
+		boolean safeToContinue = false;
 		// loading/creating save
 		p("PET GAME\nWould you like to load a save or create a new one? (LOAD / NEW)\n");
 		String mode = "";
@@ -48,20 +49,24 @@ public class starter {
 						sc.nextLine();
 					}
 				}
-				try {
-					File save = new File("saves\\save"+slotNum+".txt");
-					if (save.createNewFile()) {
-						p("File created: " + save.getName()+"\n");
-					} else {
-						p("A save already exists. Would you like to overwrite it? (Y/N)\n");
-						if(sc.nextLine().equals("Y")) {
-							save.delete();
-							save.createNewFile();
+				while(!safeToContinue) {
+					try {
+						File save = new File("saves\\save"+slotNum+".txt");
+						if (save.createNewFile()) {
+							p("File created: " + save.getName()+"\n");
+						} else {
+							p("A save already exists. Would you like to overwrite it? (Y/N)\n");
+							if(sc.nextLine().equals("Y")) {
+								save.delete();
+								save.createNewFile();
+								game = new Save(save); // yes yes all the saves are not confusing at all
+							}
 						}
+						safeToContinue = true;
+					} catch (IOException e) {
+						p("An error occurred while generating the file.\n");
+						e.printStackTrace();
 					}
-				} catch (IOException e) {
-					p("An error occurred while accessing the file.\n");
-					e.printStackTrace();
 				}
 			}
 			// LOAD game save
@@ -87,8 +92,8 @@ public class starter {
 				if(firstPet!=null) {break;}
 				p("We don't have that here...\n");
 			}
+			p(firstPet.toString()+"\n");
 			// initialize save:
-			File save = new File("saves\\save"+slotNum+".txt");
 		}	
 		// main game loop:
 		while(true) {

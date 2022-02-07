@@ -42,7 +42,7 @@ public class Fish implements Pet {
             p(name+" stares at you, confused.\n");
         }
     }
-    public void save() {
-        
-    }
+    public String toString() {
+        return "Fish";
+    } 
 }
